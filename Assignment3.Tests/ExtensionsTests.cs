@@ -32,5 +32,18 @@ namespace BDSA2021.Assignment03.Tests
 
             Assert.Equal(new int[]{56,63,70}, output);
         } 
+
+        [Fact]
+        public void given_array_of_ints_leapYears_return_40_400_1600_2000()
+        {
+            //arrange
+            var input = new int[] {40, 400, 100, 102, 1600, 2000, 1900};
+
+            //act
+            var output = Extensions.findLeapYears(input);
+
+            //assert
+            Assert.Equal(new int[] {40, 400, 1600, 2000}, output);
+        }
     }
 }
