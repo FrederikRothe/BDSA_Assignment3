@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace BDSA2021.Assignment03
 {
@@ -20,6 +21,16 @@ namespace BDSA2021.Assignment03
        public static IEnumerable<int> findLeapYears(this int[] ys)
        {
            return(ys.Where(c => DateTime.IsLeapYear(c)));
+       }
+
+       public static bool isSecure(this Uri u)
+       {
+           return(u.Scheme == Uri.UriSchemeHttps);
+       }
+
+       public static int WordCount(this string s)
+       {
+           return(s.Split(" ").Where(c => Regex.IsMatch(c, @"a-zA-Z")).Count());
        }
     }
 }
