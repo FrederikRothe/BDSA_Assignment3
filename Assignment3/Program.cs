@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Assignment3
 {
@@ -6,7 +7,16 @@ namespace Assignment3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+        }
+
+        public static string reverseString(string s)
+        {
+            Func<string,string> reverseString = default(Func<string,string>);
+            
+             reverseString = s => new string(s.Reverse().ToArray());
+
+             return reverseString(s);
         }
     }
 }
