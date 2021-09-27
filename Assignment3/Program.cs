@@ -18,5 +18,14 @@ namespace Assignment3
 
              return reverseString(s);
         }
+
+        public static double multiplyDecimals(double x, double y)
+        {
+            Func<double, double, double> product = default(Func<double,double, double>);
+            
+            product = (x, y) => x * y;
+
+            return product(x, y);
+        }
     }
 }
