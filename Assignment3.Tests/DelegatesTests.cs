@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace BDSA2020.Assignment01.Tests
+namespace BDSA2021.Assignment03.Tests
 {
     public class DelegatesTests
     {
