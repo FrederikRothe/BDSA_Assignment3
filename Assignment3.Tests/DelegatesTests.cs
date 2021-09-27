@@ -3,6 +3,7 @@ using Xunit;
 using Assignment3;
 
 namespace BDSA2021.Assignment03.Tests
+
 {
     public class DelegatesTests
     {
