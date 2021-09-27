@@ -30,7 +30,7 @@ namespace BDSA2021.Assignment03
 
        public static int WordCount(this string s)
        {
-           return(s.Split(" ").Where(c => Regex.IsMatch(c, @"a-zA-Z")).Count());
+           return(s.Split(" ").Where(c => Regex.IsMatch(c, @"([a-z]|[A-Z])")).Count());
        }
     }
 }

@@ -58,5 +58,18 @@ namespace BDSA2021.Assignment03.Tests
             //assert
             Assert.False(output);
         }
+
+        [Fact]
+        public void given_string_return_3()
+        {
+            //arrange
+            var input = "Hej med dig 123 %%% ?? =! ";
+
+            //act
+            var output = Extensions.WordCount(input);
+
+            //assert
+            Assert.Equal(3, output);
+        }
     }
 }
