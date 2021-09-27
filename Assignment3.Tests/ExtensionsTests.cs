@@ -45,5 +45,18 @@ namespace BDSA2021.Assignment03.Tests
             //assert
             Assert.Equal(new int[] {40, 400, 1600, 2000}, output);
         }
+
+        [Fact]
+        public void given_Unsecure_Uri_Return_false()
+        {
+            //arrange
+            var input = new Uri("http://www.erdetfredag.dk/");
+
+            //act
+            var output = Extensions.isSecure(input);
+
+            //assert
+            Assert.False(output);
+        }
     }
 }
