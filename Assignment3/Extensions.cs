@@ -16,5 +16,10 @@ namespace BDSA2021.Assignment03
        {
             return(ys.Where(c => (c % 7 == 0) && (c > 42)));
        }
+
+       public static IEnumerable<int> findLeapYears(this int[] ys)
+       {
+           return(ys.Where(c => DateTime.IsLeapYear(c)));
+       }
     }
 }
