@@ -32,5 +32,19 @@ namespace BDSA2021.Assignment03.Tests
             //assert
             Assert.Equal(0.25, output);
         }
+
+        [Fact]
+        public void numericallyEqually_given_string_0042point3_and_double_42_return_false()
+        {
+            //arrange
+            var inputString = "0042.3";
+            var inputDouble = 42.0;
+
+            //act
+            var output = Program.numericallyEqually(inputString, inputDouble);
+
+            //assert
+            Assert.False(output);
+        }
     }
 }

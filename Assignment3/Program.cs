@@ -27,5 +27,14 @@ namespace Assignment3
 
             return product(x, y);
         }
+
+        public static bool numericallyEqually(string x, double y)
+        {
+            Func<string, double, bool> equallity = default(Func<string, double, bool>);
+
+            equallity = (x,y) => double.Parse(x) == y;
+
+            return equallity(x,y);
+        }
     }
 }
