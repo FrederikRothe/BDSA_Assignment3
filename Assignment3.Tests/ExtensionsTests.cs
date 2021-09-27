@@ -18,5 +18,19 @@ namespace BDSA2021.Assignment03.Tests
             //assert
             Assert.Equal(new int[]{1,2,3,4,5,6,7,8}, output);
         }
+
+        [Fact]
+        public void given_An_Array_of_ints_only_return_a_56_63_70()
+        {
+            //arrange
+            var input = new int[] {7,8,42,55,56,63,64,70};
+
+            //act
+            var output = Extensions.numbersDivisbleBy7AndGreaterThan42(input);
+
+            //assert
+
+            Assert.Equal(new int[]{56,63,70}, output);
+        } 
     }
 }
