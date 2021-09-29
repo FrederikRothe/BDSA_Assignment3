@@ -9,7 +9,7 @@ namespace BDSA2021.Assignment03.Tests
     public class QueriesTests
     {
         [Fact]
-        public void allWizByRowling_Given_15_rowlingWiz()
+        public void allWizByRowling_Given_16_rowlingWiz()
         {
             //Arrange
             var wizards = Wizard.Wizards.Value;
@@ -17,6 +17,19 @@ namespace BDSA2021.Assignment03.Tests
 
             //Act
             var rowlingWiz = Queries.allWizByRowling().Count();
+
+            //Assert
+            Assert.Equal(rowlingWiz,expectedAmount);
+        }
+        [Fact]
+        public void allWizByRowlingLINQ_Given_16_rowlingWiz()
+        {
+            //Arrange
+            var wizards = Wizard.Wizards.Value;
+            int expectedAmount = 16;
+
+            //Act
+            var rowlingWiz = Queries.allWizByRowlingLINQ().Count();
 
             //Assert
             Assert.Equal(rowlingWiz,expectedAmount);
@@ -35,6 +48,18 @@ namespace BDSA2021.Assignment03.Tests
         }
 
         [Fact]
+        public void firstSithLord_given_dart_1977LINQ()
+        {
+            //Arrange
+            var wizards = Wizard.Wizards.Value;
+            int? expectedYear = 1977;
+            //Act
+            var firstSithYear = Queries.firstSithLordLINQ();
+            //Assert
+            Assert.Equal(firstSithYear,expectedYear);
+        }
+
+        [Fact]
         public void uniqueWiz_given_wizList()
         {
             //Arrange
@@ -42,6 +67,18 @@ namespace BDSA2021.Assignment03.Tests
             var expectedOutput = 16;
             //Act
             var uniqeWizses = Queries.uniqueWiz().Count();
+            //Assert
+            Assert.Equal(uniqeWizses,expectedOutput);
+        }
+
+        [Fact]
+        public void uniqueWiz_given_wizListLINQ()
+        {
+            //Arrange
+            var wizards = Wizard.Wizards.Value;
+            var expectedOutput = 16;
+            //Act
+            var uniqeWizses = Queries.uniqueWizLINQ().Count();
             //Assert
             Assert.Equal(uniqeWizses,expectedOutput);
         }
@@ -84,6 +121,5 @@ namespace BDSA2021.Assignment03.Tests
             //Assert
             Assert.Equal(expectedOrder, groupedWiz);
         }
-
     }
 }
