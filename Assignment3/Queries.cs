@@ -66,14 +66,15 @@ namespace BDSA2021.Assignment03
             return wizards.OrderByDescending(c => c.Creator).ThenByDescending(c => c.Name).GroupBy(c => (c.Creator), c => c.Name);
         }
 
-        public static IEnumerable<Tuple<string,string>> reverseOrderWizNamesGroupedByCNameThenWNameLINQ()
+        public static IEnumerable<string> reverseOrderWizNamesGroupedByCNameThenWNameLINQ()
         {
             var wizards = Wizard.Wizards.Value;
 
             var groups = from w in wizards
                         orderby w.Creator descending
                         orderby w.Name descending
-                        select Tuple.Create(w.Creator, w.Name);
+                        group w by new {w.Creator, w.Name} into g
+                        select g.Key.Name;
             return groups;
         }
     }
